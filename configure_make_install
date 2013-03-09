@@ -1,0 +1,9 @@
+#!/bin/sh
+
+./configure --prefix=$HOME/bin/sympa --with-initdir=$HOME/bin/rc.d/init.d --with-confdir=$HOME/bin/etc --with-lockdir=$HOME/bin/lock --with-mandir=$HOME/bin/man --with-perl=$HOME/bin/perlbrew/perls/perl-5.16.0/bin/perl --with-user=swk --with-group=swk --with-sendmail_aliases=$HOME/bin/etc/mail/sympa_aliases --with-virtual_aliases=$HOME/bin/etc/mail/sympa_virtual
+
+make
+
+make install
+
+cp ./sympa.fcgi ~/fcgi-bin/
