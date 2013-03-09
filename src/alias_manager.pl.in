@@ -60,6 +60,10 @@ if (($operation !~ /^(add|del)$/) || ($#ARGV < 2)) {
     exit(2);
 }
 
+## Temporaer:
+exit(1);
+## end Temporaer
+
 $default_domain = $Conf{'domain'};
 
 my $alias_file;
@@ -92,7 +96,7 @@ my $aliases_dump;
 @aliases = split /\n/, $aliases_dump;
 
 unless (@aliases) {
-    	print STDERR "No aliases defined\n";
+   	print STDERR "No aliases defined\n";
 	exit(15);
 }
 
