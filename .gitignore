@@ -8,6 +8,9 @@ config.log
 config.status
 po-wwsympa/Makefile.in
 po/Makefile.in
+src/*.pl
+src/etc/script/*.pl
+src/etc/script/sympa
 
 # make artifacts:
 doc/man8/alias_manager.8
