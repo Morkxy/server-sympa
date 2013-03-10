@@ -61,7 +61,7 @@ if (($operation !~ /^(add|del)$/) || ($#ARGV < 2)) {
 }
 
 ## Temporaer:
-exit(1);
+exit(0);
 ## end Temporaer
 
 $default_domain = $Conf{'domain'};
