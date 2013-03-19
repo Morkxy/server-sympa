@@ -1,14 +1,18 @@
 From: [% fromlist %]
-Subject: [% FILTER qencode %][%|loc(list.name)%]Welcome to list %1[%END%][%END%]
+Subject: [% FILTER qencode %][%|loc(list.name)%]Willkommen in der Gruppe %1[%END%][%END%]
 
-[%|loc(list.name,list.host)%]Welcome to list %1@%2[%END%]
-[%|loc(user.email)%]Your subscription email is %1[%END%]
+[%|loc(list.name)%]Willkommen in der Gruppe %1![%END%] 
 
 [% TRY %]
 [% INSERT "info" %]
 [% CATCH %]
 [% END %]
 
-[%|loc%]The list homepage:[%END%] [% conf.wwsympa_url %]/info/[% list.name %]
-[%|loc%]General informations about mailing lists:[%END%] [% conf.wwsympa_url %]/help/introduction
+[%|loc(user.email)%]Du bist mit der eMailadresse %1 in der Gruppe registriert.[%END%]
+
+[%|loc(list.name,list.host)%]Du kannst Mails an alle Gruppenmitglieder versenden; verwende hierzu die Adresse %1@%2.[%END%]
+
+[%|loc(list.name,list.host)%]Sende eine eMail an %1-unsubscribe@%2, um aus der Gruppe auszutreten.[%END%]
+
+
 
