@@ -13,9 +13,7 @@ src/etc/script/*.pl
 src/etc/script/sympa
 
 # make artifacts:
-doc/man8/alias_manager.8
-doc/man8/archived.8
-doc/man8/bounced.8
+*.8
 soap/sympa_soap_server-wrapper.fcgi
 src/aliaswrapper
 src/bouncequeue
