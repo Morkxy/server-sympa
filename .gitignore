@@ -11,6 +11,7 @@ po/Makefile.in
 src/*.pl
 src/etc/script/*.pl
 src/etc/script/sympa
+src/lib/Sympa/Constants.pm
 
 # make artifacts:
 *.8
@@ -21,4 +22,15 @@ src/familyqueue
 src/queue
 src/virtualwrapper
 wwsympa/wwsympa-wrapper.fcgi
+wwsympa/archived.pl
+wwsympa/bounced.pl
+wwsympa/wwsympa.fcgi
+
+doc/man8/alias_manager.pod
+doc/man8/archived.pod
+doc/man8/bounced.pod
+soap/sympa_soap_client.pl
+soap/sympa_soap_server.fcgi
+
+src/etc/list_aliases.tt2
 
