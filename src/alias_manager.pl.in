@@ -39,23 +39,13 @@ use tt2;
 use Sympa::Constants;
 use warnings;
 
-use constant QMAIL_FOLDER => "~";
-use constant SYMBA_BIN_FOLDER => "/home/swk/bin/sympa/bin";
-
+use constant QMAIL_FOLDER => "/home/swk";
 
 my $sympa_conf_file = Sympa::Constants::CONFIG;
 unless (Conf::load($sympa_conf_file)) {
    print STDERR "The configuration file $sympa_conf_file contains errors.\n";
    exit(1);
 }
-my $tmp_alias_file = $Conf{'tmpdir'}.'/sympa_aliases.'.time;
-
-
-my $default_domain;
-my $alias_wrapper       = Sympa::Constants::SBINDIR . '/aliaswrapper';
-my $lock_file           = Sympa::Constants::EXPLDIR . '/alias_manager.lock';
-my $path_to_queue       = Sympa::Constants::LIBEXECDIR . '/queue';
-my $path_to_bouncequeue = Sympa::Constants::LIBEXECDIR .'/bouncequeue';
 
 my ($operation, $listname, $domain, $file) = @ARGV;
 
@@ -67,10 +57,12 @@ if (($operation !~ /^(add|del)$/) || ($#ARGV < 2)) {
 
 if ($operation eq 'add') {
 
-  writeQmailFiles($listname);
+    writeQMailFiles($listname);
 # also use $domain?!
  
 }elsif ($operation eq 'del') {
+
+    deleteQMailFiles($listname);
 
 }else {
     print STDERR "Action $operation not implemented yet\n";
@@ -79,7 +71,7 @@ if ($operation eq 'add') {
 
 exit 0;
 
-sub writeQmailFiles {
+sub writeQMailFiles {
     my ($listname) = @_;
     writeQMailSympaConfigFile("$listname", "queue $listname\@softwerkskammer.de");
     writeQMailSympaConfigFile("$listname-owner", "bouncequeue $listname\@softwerkskammer.de");
@@ -89,7 +81,7 @@ sub writeQmailFiles {
  
 sub writeQMailSympaConfigFile {
     my ($qmailSuffix, $sympaCommand) = @_;
-    writeToFile(QMAIL_FOLDER."/.qmail-$qmailSuffix", '| '.SYMBA_BIN_FOLDER."/$sympaCommand");
+    writeToFile(QMAIL_FOLDER."/.qmail-$qmailSuffix", '| ' . Sympa::Constants::LIBEXECDIR . "/$sympaCommand");
 }
  
 sub writeToFile {
@@ -99,4 +91,18 @@ sub writeToFile {
     close ($handle) or die $!;
 }
  
+sub deleteQMailFiles {
+    my ($listname) = @_;
+    deleteQMailSympaConfigFile("$listname");
+    deleteQMailSympaConfigFile("$listname-owner");
+    deleteQMailSympaConfigFile("$listname-request");
+    deleteQMailSympaConfigFile("$listname-unsubscribe");
+}
+
+sub deleteQMailSympaConfigFile {
+    my ($qmailSuffix) = @_;
+    my $fileName = QMAIL_FOLDER."/.qmail-$qmailSuffix";
+    unlink($fileName) or warn "Could not delete $fileName: $!";
+}
+
 1;
