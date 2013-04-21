@@ -107,10 +107,6 @@ msgstr "Hilfe"
 msgid "Restore identity"
 msgstr "Identität wiederherstellen"
 
-#: ../mail_tt2/listmaster_notification.tt2:2 ../web_tt2/login_menu.tt2:13
-msgid "Listmaster"
-msgstr "Listenadministrator"
-
 #: ../web_tt2/login_menu.tt2:14
 msgid "Privileged owner"
 msgstr "Privilegierter Eigentümer"
@@ -5401,20 +5397,6 @@ msgstr "Die Liste ist geschlossen."
 msgid "you are not allowed to perform this action."
 msgstr "Sie haben dafür keine Rechte."
 
-#. (list.name)
-#: ../mail_tt2/bye.tt2:2
-msgid "Unsubscribed from %1"
-msgstr "%1 abbestellt"
-
-#. (user.email,list.name,list.host)
-#: ../mail_tt2/bye.tt2:4
-msgid "Your email address (%1) has been removed from list %2@%3"
-msgstr "Ihre E-Mail Adresse (%1) wurde von der Liste %2@%3 entfernt"
-
-#: ../mail_tt2/bye.tt2:5
-msgid "bye !"
-msgstr "Auf Wiedersehen!"
-
 #: ../mail_tt2/certif_warning.tt2:2
 msgid "near expiration of your certificate"
 msgstr "kurz vor Ablauf Ihres Zertifikates"
@@ -7848,99 +7830,6 @@ msgid ""
 msgstr ""
 "Ihnen wurde von %1 das Amt eines Listenmoderators für die Liste %2@%3 "
 "übertragen."
-
-#: ../mail_tt2/user_notification.tt2:35 ../mail_tt2/welcome.tt2:12
-msgid "The list homepage:"
-msgstr "Listen-Homepage"
-
-#: ../mail_tt2/user_notification.tt2:36
-msgid "Owner and moderator guide:"
-msgstr "Handbuch für Listeneigentümer und Moderatoren:"
-
-#: ../mail_tt2/user_notification.tt2:40
-msgid "Changing your subscriber email address"
-msgstr "Änderung Ihrer Abonnenten-E-Mail-Adresse"
-
-#: ../mail_tt2/user_notification.tt2:42
-msgid ""
-"You have requested to change your subscriber email address. To confirm your "
-"new email address with the SYMPA server, please click the link below:"
-msgstr ""
-"Sie haben beantragt, Ihre Abonnements-E-Mail-Adresse zu ändern. Um Ihre neue "
-"E-Mail-Adresse beim Sympa-Server zu bestätigen, klicken Sie bitte auf diesen "
-"Link:"
-
-#. (list.name)
-#: ../mail_tt2/user_notification.tt2:47
-msgid "Unsubscribing from list %1"
-msgstr "Abbestellen der Liste %1"
-
-#. (list.name,ip)
-#: ../mail_tt2/user_notification.tt2:51
-msgid ""
-"Somebody (probably you) requested to unsubscribe you from list %1.\n"
-"This query was issued from the IP number '%2'.\n"
-"To confirm and get removed from the list, please click the link below: "
-msgstr ""
-"Jemand (vermutlich Sie) hat beantragt, Sie von der Liste %1 zu entfernen.\n"
-"Dieser Auftrag wurde von der IP-Adresse '%2' gegeben.\n"
-" Um dies zu bestätigen und damit Ihr Abonnement zu kündigen, klicken Sie auf "
-"den folgenden Link:"
-
-#. (list.name)
-#: ../mail_tt2/user_notification.tt2:53
-msgid ""
-"You have requested to be removed from list %1. To confirm and get removed "
-"from the list, please click the link below: "
-msgstr ""
-"Sie haben gebeten, von der Liste %1 gestrichen zu werden. Um die Kündigung "
-"Ihres Abonnements zu bestätigen, klicken Sie auf die folgende Verknüpfung:"
-
-#. (family)
-#: ../mail_tt2/user_notification.tt2:58
-msgid "Unsubscribing from family %1"
-msgstr "Sich von Liste %1 streichen"
-
-#. (family,ip)
-#: ../mail_tt2/user_notification.tt2:62
-msgid ""
-"Somebody (probably you) requested to unsubscribe you from family %1.\n"
-"This query was issued from the IP number '%2'.\n"
-"To confirm and get removed from all the lists of this family, please click "
-"the link below: "
-msgstr ""
-"Jemand (vermutlich Sie) hat gebeten, Sie von der Liste %1 zu streichen.\n"
-"Dies wurde von der IP-Adresse '%2' aus getan.\n"
-"Wenn das Sie waren, bestätigen Sie bitte die Kündigung Ihres Abonnements, "
-"indem Sie auf die folgende Verknüpfung klicken:"
-
-#. (family)
-#: ../mail_tt2/user_notification.tt2:64
-msgid ""
-"You have requested to be removed from family %1. To confirm and get removed "
-"from all the lists of this family, please click the link below: "
-msgstr ""
-"Sie haben gebeten, von der Liste %1 gestrichen zu werden. Um Ihr Abonnement "
-"zu kündigen, klicken Sie bitte auf die folgende Verknüpfung:"
-
-#. (list.name)
-#: ../mail_tt2/welcome.tt2:2
-msgid "Welcome to list %1"
-msgstr "Willkommen bei der Liste %1"
-
-#. (list.name,list.host)
-#: ../mail_tt2/welcome.tt2:4
-msgid "Welcome to list %1@%2"
-msgstr "Willkommen bei der Liste %1@%2"
-
-#. (user.email)
-#: ../mail_tt2/welcome.tt2:5
-msgid "Your subscription email is %1"
-msgstr "Sie sind mit der E-Mail Adresse %1 eingetragen."
-
-#: ../mail_tt2/welcome.tt2:13
-msgid "General informations about mailing lists:"
-msgstr "Allgemeine Informationen über Mailinglisten:"
 
 #: ../mail_tt2/which.tt2:2
 msgid "Result of your command"
