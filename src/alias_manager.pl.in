@@ -73,10 +73,10 @@ exit 0;
 
 sub writeQMailFiles {
     my ($listname) = @_;
-    writeQMailSympaConfigFile("$listname", "queue $listname\@softwerkskammer.de");
-    writeQMailSympaConfigFile("$listname-owner", "bouncequeue $listname\@softwerkskammer.de");
-    writeQMailSympaConfigFile("$listname-request", "queue $listname-request\@softwerkskammer.de");
-    writeQMailSympaConfigFile("$listname-unsubscribe", "queue $listname-unsubscribe\@softwerkskammer.de");
+    writeQMailSympaConfigFile("$listname", "queue $listname\@softwerkskammer.org");
+    writeQMailSympaConfigFile("$listname-owner", "bouncequeue $listname\@softwerkskammer.org");
+    writeQMailSympaConfigFile("$listname-request", "queue $listname-request\@softwerkskammer.org");
+    writeQMailSympaConfigFile("$listname-unsubscribe", "queue $listname-unsubscribe\@softwerkskammer.org");
 }
  
 sub writeQMailSympaConfigFile {
