@@ -791,8 +791,7 @@ sub mail2arc {
 
     if ($wwsconf->{'custom_archiver'}) {
 	`$wwsconf->{'custom_archiver'} --list=$listname\@$hostname --file=$queue/$file`;
-	return 1;
-    }else{
+    }
 
 	my $basedir = $arcpath.'/'.$list->get_list_id();
 	
@@ -915,7 +914,6 @@ sub mail2arc {
 	close DEST;
 
 	&save_idx("$monthdir/index",$newfile);
-    }
 }
 
 =pod 
