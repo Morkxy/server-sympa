@@ -790,7 +790,19 @@ sub mail2arc {
     #    chdir($wwsconf->{'arc_path'});
 
     if ($wwsconf->{'custom_archiver'}) {
-	`$wwsconf->{'custom_archiver'} --list=$listname\@$hostname --file=$queue/$file`;
+	&do_log('info', 'Invoking custom archiver for mail %s/%s for list %s', $queue, $file, $listname);
+	&do_log('debug', "In directory %s", cwd());
+	chdir("/home/swk/plattform/lib/mailarchive");
+	&do_log('debug', "Changed to directory %s", cwd());
+        my $node_call = "/usr/local/bin/node startImportMails $queue/$file $listname >> imported.log";
+	&do_log('debug', 'Node system call: %s', $node_call);
+        my $resultcode = system($node_call); 
+	# $resultcode = $resultcode / 256;
+	if ($resultcode) {
+	    do_log('err',"Command $cmd failed with exit code $resultcode");
+	}
+
+	# `$wwsconf->{'custom_archiver'} --list=$listname\@$hostname --file=$queue/$file`;
     }
 
 	my $basedir = $arcpath.'/'.$list->get_list_id();
